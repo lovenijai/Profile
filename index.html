@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Love Nijai | AI Portfolio</title>
+<title>Love Nijai | Full Stack Developer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -65,7 +65,16 @@ body {
   transform:translateY(-5px);
 }
 
-/* CHAT BUTTON */
+/* SKILLS */
+.skill {
+  display:inline-block;
+  padding:8px 14px;
+  margin:5px;
+  background:var(--accent);
+  border-radius:20px;
+}
+
+/* CHAT */
 #chatButton {
   position:fixed;
   bottom:20px;
@@ -74,10 +83,8 @@ body {
   padding:14px;
   border-radius:50%;
   cursor:pointer;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* CHAT POPUP */
 #chatPopup {
   position:fixed;
   bottom:20px;
@@ -91,56 +98,30 @@ body {
   overflow:hidden;
 }
 
-/* HEADER */
 #chatHeader {
   padding:12px;
   background:#6366f1;
   color:white;
-  flex-shrink:0;
 }
 
-/* GREETING OVERLAY */
 #greeting {
   position:absolute;
   top:50px;
   left:0;
   right:0;
-  padding:15px;
-  font-size:14px;
-  background:#88c0f7;
-  border-bottom:1px solid #ddd;
-  z-index:10;
-  animation:fadeIn 0.3s ease;
+  padding:12px;
+  background:#f9fafb;
+  font-size:13px;
 }
 
-/* TYPING DOTS */
-.dots::after {
-  content:"...";
-  animation:dots 1.5s infinite;
-}
-
-@keyframes dots {
-  0%{content:".";}
-  33%{content:"..";}
-  66%{content:"...";}
-}
-
-/* CHAT BODY */
 #chatBody {
   flex:1;
-  display:flex;
 }
 
 #chatBody iframe {
   width:100%;
   height:100%;
   border:none;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-  from {opacity:0;}
-  to {opacity:1;}
 }
 </style>
 </head>
@@ -152,40 +133,108 @@ body {
   <img src="profile.jpg">
   <h1>Love Nijai</h1>
   <p id="typing"></p>
+  <p>Team Lead • Cloud Migration • Banking Solutions</p>
 </div>
 
 <div class="container">
-  <div class="card">
-    <h2>Why Hire Me</h2>
-    <p>9+ years experience • Team Lead • Cloud & Banking expert</p>
-  </div>
+
+<!-- SUMMARY -->
+<div class="card">
+<h2>Summary</h2>
+<p>
+Accomplished Team Leader with 9+ years of experience in software development and cloud migration. Expert in .NET Core, ASP.NET, Angular, and React. Proven track record in improving system performance, optimizing codebases, and delivering scalable banking solutions.
+</p>
 </div>
 
-<!-- CHAT BUTTON -->
+<!-- EXPERIENCE -->
+<div class="card">
+<h2>Experience</h2>
+
+<p><b>Technical Team Lead</b> – BusinessNext (07/2025 - Present)</p>
+<ul>
+<li>Leading HDFC Digital Application</li>
+<li>Managing team of 4 developers</li>
+<li>Performing code reviews and mentoring</li>
+</ul>
+
+<p><b>Sr Software Engineer</b> – BusinessNext (04/2022 - 06/2025)</p>
+<ul>
+<li>Cloud migration for HDFC systems</li>
+<li>Subject matter expert for development initiatives</li>
+</ul>
+
+<p><b>Software Engineer</b> – BusinessNext (2019 - 2022)</p>
+<ul>
+<li>Worked on 45+ banking products</li>
+<li>Built FASTag, cards, and loan systems</li>
+</ul>
+
+<p><b>Software Developer</b> – LTIMindtree (2016 - 2019)</p>
+<ul>
+<li>Improved performance by 35%</li>
+<li>Worked on ASP.NET MVC & Angular</li>
+</ul>
+
+</div>
+
+<!-- SKILLS -->
+<div class="card">
+<h2>Skills</h2>
+<div class="skill">.NET Core</div>
+<div class="skill">ASP.NET</div>
+<div class="skill">Angular</div>
+<div class="skill">React</div>
+<div class="skill">SQL</div>
+<div class="skill">MongoDB</div>
+<div class="skill">API Integration</div>
+<div class="skill">Agile</div>
+</div>
+
+<!-- EDUCATION -->
+<div class="card">
+<h2>Education</h2>
+<p>Bachelor of IT – RGIT Mumbai (2016)</p>
+<p>Diploma in Computer Engineering – Viva College (2013)</p>
+</div>
+
+<!-- CONTACT -->
+<div class="card">
+<h2>Contact</h2>
+<p><i class="fa-solid fa-location-dot"></i> Mumbai, India</p>
+<p><i class="fa-solid fa-phone"></i> 7588333112</p>
+<p><i class="fa-solid fa-envelope"></i> lovenijai@gmail.com</p>
+</div>
+
+<!-- PERSONAL -->
+<div class="card">
+<h2>Personal Info</h2>
+<p>DOB: 31 Dec 1992</p>
+<p>Nationality: Indian</p>
+<p>Marital Status: Married</p>
+</div>
+
+</div>
+
+<!-- CHAT -->
 <div id="chatButton" onclick="openChat()">💬</div>
 
-<!-- CHAT POPUP -->
 <div id="chatPopup">
-
   <div id="chatHeader">
     Love Nijai AI 🤖
     <span onclick="closeChat()" style="float:right;cursor:pointer;">✖</span>
   </div>
 
-  <!-- GREETING -->
   <div id="greeting">
-    Hi 👋 I'm Love Nijai's Assistant <br>
-    <span id="greetText">Let me help you understand his profile<span class="dots"></span></span>
+    Hi 👋 I’m Love Nijai’s assistant. Ask me anything about his experience.
   </div>
 
   <div id="chatBody">
     <iframe src="https://lovenijai-career-info.hf.space"></iframe>
   </div>
-
 </div>
 
 <script>
-// HERO TYPING
+// typing
 const text = "Technical Team Lead | Full Stack Developer";
 let i = 0;
 function type(){
@@ -197,27 +246,18 @@ function type(){
 }
 type();
 
-// CHAT
+// chat
 function openChat(){
  document.getElementById("chatPopup").style.display="flex";
-
- // Remove greeting after few seconds
  setTimeout(()=>{
-   let g = document.getElementById("greeting");
-   if(g){
-     g.style.display="none";
-   }
- },2000);
+  let g=document.getElementById("greeting");
+  if(g) g.style.display="none";
+ },4000);
 }
 
 function closeChat(){
  document.getElementById("chatPopup").style.display="none";
 }
-
-// CTA CHANGE
-setTimeout(()=>{
- document.getElementById("chatButton").innerText="💬 Ask me why you should hire him";
-},3000);
 </script>
 
 </body>
